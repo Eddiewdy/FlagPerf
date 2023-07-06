@@ -112,7 +112,7 @@ class Trainer:
         state.eval_map_segm = self.evaluator.coco_eval['segm'].stats.tolist()[0]
 
         
-        dist_pytorch.main_proc_print(f"epoch: {state.epoch} state.eval_map_bbox:{state.eval_map_bbox}  state.eval_map_bbox:{state.eval_map_segm}")
+        dist_pytorch.main_proc_print(f"epoch: {state.epoch} state.eval_map_bbox:{state.eval_map_bbox}  state.eval_map_segm:{state.eval_map_segm}")
 
         if state.eval_map_bbox >= config.target_map_bbox and state.eval_map_segm >= config.target_map_segm:
             dist_pytorch.main_proc_print(
